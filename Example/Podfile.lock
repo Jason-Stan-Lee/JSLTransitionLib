@@ -1,0 +1,23 @@
+PODS:
+  - JSLTransitionLib (0.1.0)
+  - Quick (1.2.0)
+
+DEPENDENCIES:
+  - JSLTransitionLib (from `../`)
+  - Quick (~> 1.2.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Quick
+
+EXTERNAL SOURCES:
+  JSLTransitionLib:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  JSLTransitionLib: fae4b7c598d9f48a67ad9565c2af2a9bbc399c6b
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+
+PODFILE CHECKSUM: 88767f800389946cf9d84260d3aa3177f0ce5a0e
+
+COCOAPODS: 1.6.0
