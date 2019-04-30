@@ -1,0 +1,807 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		067434F6CBED3A13A90B5CCDE6B52731 /* JSLTransitionLib-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB1F03AF5D8B4375889731784AA6F56 /* JSLTransitionLib-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0CB1FE0022E366346A96FD2403CD43F5 /* BasicViewControllerAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022FE2B6BFCE7EE0F75148C4993D8341 /* BasicViewControllerAnimatedTransitioning.swift */; };
+		0F390E1308C1772C27298F051CB88493 /* JSLTransitionLib-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDC53A4CC2297F09009F0F432723E59 /* JSLTransitionLib-dummy.m */; };
+		0F3BE47E1877E07EB1351E0D7829CD3C /* ViewControllerTransitionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B26CAB6F70B920CD5BC69C50BBD64F2 /* ViewControllerTransitionProtocol.swift */; };
+		11F03598DB5F97BFF7F480EA436936D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		3C96E2AAD08B142FB3AF100E7BA24C27 /* Pods-JSLTransitionLib_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A3CE5BF604D09E7A1B6F9A2D9A0C7A /* Pods-JSLTransitionLib_Example-dummy.m */; };
+		570DAA2658D5BBB8048B2BD1ED1F93B5 /* PresentAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE55BD232CCD00934A459DFCF409B76 /* PresentAnimatedTransitioning.swift */; };
+		6DEA87F17161AC048DF2E50D02581C68 /* Pods-JSLTransitionLib_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E73CEE5A54BBE7949E9353EE106C6 /* Pods-JSLTransitionLib_Tests-dummy.m */; };
+		743A91CFCBE2E21EE622885134AF6122 /* SemiPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623265E9AA7DA8677A4A0681B1738173 /* SemiPresentationController.swift */; };
+		813D00E20639F9F70C8C4E0F24F62988 /* Pods-JSLTransitionLib_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E4170C725E2278DDAAB80225A0EA8F9 /* Pods-JSLTransitionLib_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B059F2C31E9143142764C847DB500A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		A1903F7F0A9FD2AFDAA9922FFEB90429 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		E19A97F9997B566A122FFA3635BA5522 /* AssociatedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6538B6569BC21B35D1003FB89C3D76 /* AssociatedKeys.swift */; };
+		F008C3474F8B0B35D2D16D9CA2E1C5DB /* ViewControllerTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62E151C74978F41C5F17D374F7479DF /* ViewControllerTransitionDelegate.swift */; };
+		FFA8EBE15BBDAAAAC4555A578421175C /* Pods-JSLTransitionLib_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AF7902B89815CB7F19EC4EAC401C28A1 /* Pods-JSLTransitionLib_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		274F94128E7A32E3FDF0FF169BC30698 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6689B0B56E278CEEA4FDE23280D7CE80;
+			remoteInfo = JSLTransitionLib;
+		};
+		75B5503697EBA60F7014217FE40961E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A180E7F49CF29BE67465147FABC92C3;
+			remoteInfo = "Pods-JSLTransitionLib_Example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		022FE2B6BFCE7EE0F75148C4993D8341 /* BasicViewControllerAnimatedTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BasicViewControllerAnimatedTransitioning.swift; sourceTree = "<group>"; };
+		04486CA2CAADB83C9E1F3AA5D8FF83E5 /* Pods-JSLTransitionLib_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JSLTransitionLib_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0452CA0A95C872284157DA2B01D43D7B /* JSLTransitionLib.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JSLTransitionLib.xcconfig; sourceTree = "<group>"; };
+		0B26CAB6F70B920CD5BC69C50BBD64F2 /* ViewControllerTransitionProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewControllerTransitionProtocol.swift; sourceTree = "<group>"; };
+		1397627ED35A99773C18605D8374E341 /* Pods-JSLTransitionLib_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JSLTransitionLib_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		198412B62B224A12687637D37B99421C /* Pods-JSLTransitionLib_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JSLTransitionLib_Example-frameworks.sh"; sourceTree = "<group>"; };
+		256D17AE347C994662E13AF5A38A14E9 /* Pods-JSLTransitionLib_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JSLTransitionLib_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		374279579B4C15DC5F52976AB9A9A838 /* JSLTransitionLib-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "JSLTransitionLib-Info.plist"; sourceTree = "<group>"; };
+		4D5979BD903B0149CA7C9C9FC61F4307 /* Pods-JSLTransitionLib_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JSLTransitionLib_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4E4170C725E2278DDAAB80225A0EA8F9 /* Pods-JSLTransitionLib_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JSLTransitionLib_Example-umbrella.h"; sourceTree = "<group>"; };
+		55C9F8417BE2371A13961E7D188DEAA9 /* Pods-JSLTransitionLib_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JSLTransitionLib_Tests.modulemap"; sourceTree = "<group>"; };
+		59BCCFD1F0D12B8D7787083AC52B7315 /* JSLTransitionLib.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = JSLTransitionLib.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		623265E9AA7DA8677A4A0681B1738173 /* SemiPresentationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SemiPresentationController.swift; sourceTree = "<group>"; };
+		6305128819E44B45DC3AE948EB7E8AAC /* JSLTransitionLib-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JSLTransitionLib-prefix.pch"; sourceTree = "<group>"; };
+		69FC5AB2164C4E7370BE9789495CAAAC /* Pods_JSLTransitionLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JSLTransitionLib_Tests.framework; path = "Pods-JSLTransitionLib_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		708FE58DFE2BC1154A4869FC24220B79 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		72A3CE5BF604D09E7A1B6F9A2D9A0C7A /* Pods-JSLTransitionLib_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JSLTransitionLib_Example-dummy.m"; sourceTree = "<group>"; };
+		826A696CED47A9F5DC4A973BE27B3A41 /* Pods-JSLTransitionLib_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JSLTransitionLib_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		8CDC53A4CC2297F09009F0F432723E59 /* JSLTransitionLib-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JSLTransitionLib-dummy.m"; sourceTree = "<group>"; };
+		8FC8505A1EF3E9DEE1D67F50A2C85881 /* Pods-JSLTransitionLib_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JSLTransitionLib_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		9CA1E406B7FB6BEF5685C08A714966D9 /* JSLTransitionLib.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JSLTransitionLib.modulemap; sourceTree = "<group>"; };
+		9CE55BD232CCD00934A459DFCF409B76 /* PresentAnimatedTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PresentAnimatedTransitioning.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DF16378DB8112DD02859B6918BB754C /* JSLTransitionLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JSLTransitionLib.framework; path = JSLTransitionLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E0E73CEE5A54BBE7949E9353EE106C6 /* Pods-JSLTransitionLib_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JSLTransitionLib_Tests-dummy.m"; sourceTree = "<group>"; };
+		AF7902B89815CB7F19EC4EAC401C28A1 /* Pods-JSLTransitionLib_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JSLTransitionLib_Tests-umbrella.h"; sourceTree = "<group>"; };
+		B62E151C74978F41C5F17D374F7479DF /* ViewControllerTransitionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewControllerTransitionDelegate.swift; sourceTree = "<group>"; };
+		BEC9B60C4D99038109663F3F885673F4 /* Pods-JSLTransitionLib_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JSLTransitionLib_Example.modulemap"; sourceTree = "<group>"; };
+		C6E75541F6F942C4A96BB288A9026540 /* Pods-JSLTransitionLib_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JSLTransitionLib_Tests-Info.plist"; sourceTree = "<group>"; };
+		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D19AC086AE0D3571DD420C998A82C300 /* Pods-JSLTransitionLib_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JSLTransitionLib_Example-Info.plist"; sourceTree = "<group>"; };
+		D68C06AAF85F4D3F23054DF4F2EEE78E /* Pods-JSLTransitionLib_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JSLTransitionLib_Example.release.xcconfig"; sourceTree = "<group>"; };
+		D8ECB500A8A01E58BB695C81E2A85FA5 /* Pods-JSLTransitionLib_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JSLTransitionLib_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		DBD2032DD8B8B70D8382B49AE95E9CD8 /* Pods_JSLTransitionLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JSLTransitionLib_Example.framework; path = "Pods-JSLTransitionLib_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECB1F03AF5D8B4375889731784AA6F56 /* JSLTransitionLib-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JSLTransitionLib-umbrella.h"; sourceTree = "<group>"; };
+		F498E8B2D9449CC18AA01594A22B00A9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		FC6538B6569BC21B35D1003FB89C3D76 /* AssociatedKeys.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AssociatedKeys.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		409F142DF600AAC7ACA826062CFE211E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1903F7F0A9FD2AFDAA9922FFEB90429 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DA1A5C3A02D431E042C59177DC94CFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B059F2C31E9143142764C847DB500A3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD3B75FDF8861C4062A24D24C0F9EED9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11F03598DB5F97BFF7F480EA436936D4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20B139D4CB7FDD11FE8CBBDDC15B38AB /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72029B92B8F151976313E97D2302417D /* JSLTransitionLib */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		63892B5FC0F84C51F9604EB77B3831E3 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				59BCCFD1F0D12B8D7787083AC52B7315 /* JSLTransitionLib.podspec */,
+				F498E8B2D9449CC18AA01594A22B00A9 /* LICENSE */,
+				708FE58DFE2BC1154A4869FC24220B79 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		66D6C3BF7973AFE70E66B8E66A8A3191 /* TransitionControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC6538B6569BC21B35D1003FB89C3D76 /* AssociatedKeys.swift */,
+				B62E151C74978F41C5F17D374F7479DF /* ViewControllerTransitionDelegate.swift */,
+				0B26CAB6F70B920CD5BC69C50BBD64F2 /* ViewControllerTransitionProtocol.swift */,
+			);
+			name = TransitionControllers;
+			path = JSLTransitionLib/Classes/TransitionControllers;
+			sourceTree = "<group>";
+		};
+		72029B92B8F151976313E97D2302417D /* JSLTransitionLib */ = {
+			isa = PBXGroup;
+			children = (
+				E40B979484974053A3458F97F03475B1 /* Animators */,
+				63892B5FC0F84C51F9604EB77B3831E3 /* Pod */,
+				BF3C2456B529BD4F74CE8B3A279E60EC /* Support Files */,
+				66D6C3BF7973AFE70E66B8E66A8A3191 /* TransitionControllers */,
+			);
+			name = JSLTransitionLib;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		A9DC4DB29C9A1A15CFED66D9F25894BA /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B86E3EAF87EEBD93C46E4655C70D3A75 /* Pods-JSLTransitionLib_Example */,
+				FEB9A004AA49666589A88267B4B8E5B9 /* Pods-JSLTransitionLib_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B86E3EAF87EEBD93C46E4655C70D3A75 /* Pods-JSLTransitionLib_Example */ = {
+			isa = PBXGroup;
+			children = (
+				BEC9B60C4D99038109663F3F885673F4 /* Pods-JSLTransitionLib_Example.modulemap */,
+				04486CA2CAADB83C9E1F3AA5D8FF83E5 /* Pods-JSLTransitionLib_Example-acknowledgements.markdown */,
+				826A696CED47A9F5DC4A973BE27B3A41 /* Pods-JSLTransitionLib_Example-acknowledgements.plist */,
+				72A3CE5BF604D09E7A1B6F9A2D9A0C7A /* Pods-JSLTransitionLib_Example-dummy.m */,
+				198412B62B224A12687637D37B99421C /* Pods-JSLTransitionLib_Example-frameworks.sh */,
+				D19AC086AE0D3571DD420C998A82C300 /* Pods-JSLTransitionLib_Example-Info.plist */,
+				4E4170C725E2278DDAAB80225A0EA8F9 /* Pods-JSLTransitionLib_Example-umbrella.h */,
+				256D17AE347C994662E13AF5A38A14E9 /* Pods-JSLTransitionLib_Example.debug.xcconfig */,
+				D68C06AAF85F4D3F23054DF4F2EEE78E /* Pods-JSLTransitionLib_Example.release.xcconfig */,
+			);
+			name = "Pods-JSLTransitionLib_Example";
+			path = "Target Support Files/Pods-JSLTransitionLib_Example";
+			sourceTree = "<group>";
+		};
+		BF3C2456B529BD4F74CE8B3A279E60EC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9CA1E406B7FB6BEF5685C08A714966D9 /* JSLTransitionLib.modulemap */,
+				0452CA0A95C872284157DA2B01D43D7B /* JSLTransitionLib.xcconfig */,
+				8CDC53A4CC2297F09009F0F432723E59 /* JSLTransitionLib-dummy.m */,
+				374279579B4C15DC5F52976AB9A9A838 /* JSLTransitionLib-Info.plist */,
+				6305128819E44B45DC3AE948EB7E8AAC /* JSLTransitionLib-prefix.pch */,
+				ECB1F03AF5D8B4375889731784AA6F56 /* JSLTransitionLib-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/JSLTransitionLib";
+			sourceTree = "<group>";
+		};
+		C763160D9F6B8C36E1EFF594D0B0836F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9DF16378DB8112DD02859B6918BB754C /* JSLTransitionLib.framework */,
+				DBD2032DD8B8B70D8382B49AE95E9CD8 /* Pods_JSLTransitionLib_Example.framework */,
+				69FC5AB2164C4E7370BE9789495CAAAC /* Pods_JSLTransitionLib_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				20B139D4CB7FDD11FE8CBBDDC15B38AB /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				C763160D9F6B8C36E1EFF594D0B0836F /* Products */,
+				A9DC4DB29C9A1A15CFED66D9F25894BA /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B055D0CFEA43187E72B03DED11F5662 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E40B979484974053A3458F97F03475B1 /* Animators */ = {
+			isa = PBXGroup;
+			children = (
+				022FE2B6BFCE7EE0F75148C4993D8341 /* BasicViewControllerAnimatedTransitioning.swift */,
+				9CE55BD232CCD00934A459DFCF409B76 /* PresentAnimatedTransitioning.swift */,
+				623265E9AA7DA8677A4A0681B1738173 /* SemiPresentationController.swift */,
+			);
+			name = Animators;
+			path = JSLTransitionLib/Classes/Animators;
+			sourceTree = "<group>";
+		};
+		FEB9A004AA49666589A88267B4B8E5B9 /* Pods-JSLTransitionLib_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				55C9F8417BE2371A13961E7D188DEAA9 /* Pods-JSLTransitionLib_Tests.modulemap */,
+				4D5979BD903B0149CA7C9C9FC61F4307 /* Pods-JSLTransitionLib_Tests-acknowledgements.markdown */,
+				D8ECB500A8A01E58BB695C81E2A85FA5 /* Pods-JSLTransitionLib_Tests-acknowledgements.plist */,
+				9E0E73CEE5A54BBE7949E9353EE106C6 /* Pods-JSLTransitionLib_Tests-dummy.m */,
+				C6E75541F6F942C4A96BB288A9026540 /* Pods-JSLTransitionLib_Tests-Info.plist */,
+				AF7902B89815CB7F19EC4EAC401C28A1 /* Pods-JSLTransitionLib_Tests-umbrella.h */,
+				8FC8505A1EF3E9DEE1D67F50A2C85881 /* Pods-JSLTransitionLib_Tests.debug.xcconfig */,
+				1397627ED35A99773C18605D8374E341 /* Pods-JSLTransitionLib_Tests.release.xcconfig */,
+			);
+			name = "Pods-JSLTransitionLib_Tests";
+			path = "Target Support Files/Pods-JSLTransitionLib_Tests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		634A6CEC6FA22B62E9B11B0F1C3D0346 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				813D00E20639F9F70C8C4E0F24F62988 /* Pods-JSLTransitionLib_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D622151624DC13FAF3125D9DEA16D07 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				067434F6CBED3A13A90B5CCDE6B52731 /* JSLTransitionLib-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9519C5AA7647476C98FCDCBC272DD3E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFA8EBE15BBDAAAAC4555A578421175C /* Pods-JSLTransitionLib_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4A180E7F49CF29BE67465147FABC92C3 /* Pods-JSLTransitionLib_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86B5BB218C487F66DD9FA4021E013767 /* Build configuration list for PBXNativeTarget "Pods-JSLTransitionLib_Example" */;
+			buildPhases = (
+				634A6CEC6FA22B62E9B11B0F1C3D0346 /* Headers */,
+				532D97C7077FE9D2B3C471CF682E0CE4 /* Sources */,
+				6DA1A5C3A02D431E042C59177DC94CFD /* Frameworks */,
+				19676C62B9E02780586791EAC89A709A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4B7EF80A3CFFEEED0E92DE2E113D7A1B /* PBXTargetDependency */,
+			);
+			name = "Pods-JSLTransitionLib_Example";
+			productName = "Pods-JSLTransitionLib_Example";
+			productReference = DBD2032DD8B8B70D8382B49AE95E9CD8 /* Pods_JSLTransitionLib_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6689B0B56E278CEEA4FDE23280D7CE80 /* JSLTransitionLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8947493D863A7CC13CA4E08CF932C56 /* Build configuration list for PBXNativeTarget "JSLTransitionLib" */;
+			buildPhases = (
+				9D622151624DC13FAF3125D9DEA16D07 /* Headers */,
+				87CA1F0C5D5848AD87C7895FA15103C8 /* Sources */,
+				CD3B75FDF8861C4062A24D24C0F9EED9 /* Frameworks */,
+				F0954CA05F037A6975FAEC24447F643C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JSLTransitionLib;
+			productName = JSLTransitionLib;
+			productReference = 9DF16378DB8112DD02859B6918BB754C /* JSLTransitionLib.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CBADD88E217B889E7ADDD5CFD0D8DEF7 /* Pods-JSLTransitionLib_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC2C54E352FB8940B31B7B587A245CB9 /* Build configuration list for PBXNativeTarget "Pods-JSLTransitionLib_Tests" */;
+			buildPhases = (
+				B9519C5AA7647476C98FCDCBC272DD3E /* Headers */,
+				8347E5C736282AC7ECCDDF968DBFDB23 /* Sources */,
+				409F142DF600AAC7ACA826062CFE211E /* Frameworks */,
+				A01D7787168D76C095A3FB4E44F48B1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DBD0073DC0F0196547498089570A537 /* PBXTargetDependency */,
+			);
+			name = "Pods-JSLTransitionLib_Tests";
+			productName = "Pods-JSLTransitionLib_Tests";
+			productReference = 69FC5AB2164C4E7370BE9789495CAAAC /* Pods_JSLTransitionLib_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = C763160D9F6B8C36E1EFF594D0B0836F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6689B0B56E278CEEA4FDE23280D7CE80 /* JSLTransitionLib */,
+				4A180E7F49CF29BE67465147FABC92C3 /* Pods-JSLTransitionLib_Example */,
+				CBADD88E217B889E7ADDD5CFD0D8DEF7 /* Pods-JSLTransitionLib_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		19676C62B9E02780586791EAC89A709A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A01D7787168D76C095A3FB4E44F48B1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0954CA05F037A6975FAEC24447F643C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		532D97C7077FE9D2B3C471CF682E0CE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C96E2AAD08B142FB3AF100E7BA24C27 /* Pods-JSLTransitionLib_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8347E5C736282AC7ECCDDF968DBFDB23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DEA87F17161AC048DF2E50D02581C68 /* Pods-JSLTransitionLib_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87CA1F0C5D5848AD87C7895FA15103C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E19A97F9997B566A122FFA3635BA5522 /* AssociatedKeys.swift in Sources */,
+				0CB1FE0022E366346A96FD2403CD43F5 /* BasicViewControllerAnimatedTransitioning.swift in Sources */,
+				0F390E1308C1772C27298F051CB88493 /* JSLTransitionLib-dummy.m in Sources */,
+				570DAA2658D5BBB8048B2BD1ED1F93B5 /* PresentAnimatedTransitioning.swift in Sources */,
+				743A91CFCBE2E21EE622885134AF6122 /* SemiPresentationController.swift in Sources */,
+				F008C3474F8B0B35D2D16D9CA2E1C5DB /* ViewControllerTransitionDelegate.swift in Sources */,
+				0F3BE47E1877E07EB1351E0D7829CD3C /* ViewControllerTransitionProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4B7EF80A3CFFEEED0E92DE2E113D7A1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JSLTransitionLib;
+			target = 6689B0B56E278CEEA4FDE23280D7CE80 /* JSLTransitionLib */;
+			targetProxy = 274F94128E7A32E3FDF0FF169BC30698 /* PBXContainerItemProxy */;
+		};
+		5DBD0073DC0F0196547498089570A537 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-JSLTransitionLib_Example";
+			target = 4A180E7F49CF29BE67465147FABC92C3 /* Pods-JSLTransitionLib_Example */;
+			targetProxy = 75B5503697EBA60F7014217FE40961E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		07488D4657FB0A78086563621D425F8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		2B4732DE7BF1B18A8DFD553F2AD63013 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D68C06AAF85F4D3F23054DF4F2EEE78E /* Pods-JSLTransitionLib_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JSLTransitionLib_Example/Pods-JSLTransitionLib_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JSLTransitionLib_Example/Pods-JSLTransitionLib_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		39E2B0E307CFDDAAFA437C1DFAC82C94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0452CA0A95C872284157DA2B01D43D7B /* JSLTransitionLib.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JSLTransitionLib/JSLTransitionLib-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JSLTransitionLib/JSLTransitionLib-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JSLTransitionLib/JSLTransitionLib.modulemap";
+				PRODUCT_MODULE_NAME = JSLTransitionLib;
+				PRODUCT_NAME = JSLTransitionLib;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		823B87393396773004948BE6940BB330 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1397627ED35A99773C18605D8374E341 /* Pods-JSLTransitionLib_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JSLTransitionLib_Tests/Pods-JSLTransitionLib_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JSLTransitionLib_Tests/Pods-JSLTransitionLib_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A1962E6FF39BBAC201A2E5DDF99557DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		BF1BF08DA8D212DC1C02B22B19C3A484 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0452CA0A95C872284157DA2B01D43D7B /* JSLTransitionLib.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JSLTransitionLib/JSLTransitionLib-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JSLTransitionLib/JSLTransitionLib-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JSLTransitionLib/JSLTransitionLib.modulemap";
+				PRODUCT_MODULE_NAME = JSLTransitionLib;
+				PRODUCT_NAME = JSLTransitionLib;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EAE55FCB133B0C373C8975FFF583E64B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 256D17AE347C994662E13AF5A38A14E9 /* Pods-JSLTransitionLib_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JSLTransitionLib_Example/Pods-JSLTransitionLib_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JSLTransitionLib_Example/Pods-JSLTransitionLib_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F80DE2C69A1F0614EB6E8EC131D0C313 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FC8505A1EF3E9DEE1D67F50A2C85881 /* Pods-JSLTransitionLib_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JSLTransitionLib_Tests/Pods-JSLTransitionLib_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JSLTransitionLib_Tests/Pods-JSLTransitionLib_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07488D4657FB0A78086563621D425F8A /* Debug */,
+				A1962E6FF39BBAC201A2E5DDF99557DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86B5BB218C487F66DD9FA4021E013767 /* Build configuration list for PBXNativeTarget "Pods-JSLTransitionLib_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAE55FCB133B0C373C8975FFF583E64B /* Debug */,
+				2B4732DE7BF1B18A8DFD553F2AD63013 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC2C54E352FB8940B31B7B587A245CB9 /* Build configuration list for PBXNativeTarget "Pods-JSLTransitionLib_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F80DE2C69A1F0614EB6E8EC131D0C313 /* Debug */,
+				823B87393396773004948BE6940BB330 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8947493D863A7CC13CA4E08CF932C56 /* Build configuration list for PBXNativeTarget "JSLTransitionLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF1BF08DA8D212DC1C02B22B19C3A484 /* Debug */,
+				39E2B0E307CFDDAAFA437C1DFAC82C94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

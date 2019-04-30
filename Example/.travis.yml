@@ -1,0 +1,4 @@
+language: swift
+osx_image: xcode10
+script:
+    - xcodebuild clean test -project JSLTransitionLib.xcworkspace -scheme JSLTransitionLib -destination "platform=iOS Simulator,name=iPhone 7,OS=10.0" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
