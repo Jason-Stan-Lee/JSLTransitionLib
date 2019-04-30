@@ -1,6 +1,6 @@
 # JSLTransitionLib
 
-[![CI Status](https://img.shields.io/travis/jason_lee_92@yahoo.com/JSLTransitionLib.svg?style=flat)](https://travis-ci.org/jason_lee_92@yahoo.com/JSLTransitionLib)
+[![CI Status](https://img.shields.io/travis/jason_lee_92@yahoo.com/JSLTransitionLib.svg?style=flat)](https://travis-ci.org/Jason-Stan-Lee/JSLTransitionLib)
 [![Version](https://img.shields.io/cocoapods/v/JSLTransitionLib.svg?style=flat)](https://cocoapods.org/pods/JSLTransitionLib)
 [![License](https://img.shields.io/cocoapods/l/JSLTransitionLib.svg?style=flat)](https://cocoapods.org/pods/JSLTransitionLib)
 [![Platform](https://img.shields.io/cocoapods/p/JSLTransitionLib.svg?style=flat)](https://cocoapods.org/pods/JSLTransitionLib)

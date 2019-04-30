@@ -1,0 +1,6 @@
+framework module Pods_JSLTransitionLib_Tests {
+  umbrella header "Pods-JSLTransitionLib_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
