@@ -21,7 +21,7 @@ public protocol BasicViewControllerAnimatedTransitioningDelegate: AnyObject {
 /// 视图控制器转场动画基类
 open class BasicViewControllerAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
 
-    enum PresentAnimatedType {
+    public enum PresentAnimatedType {
         case present, dismiss
     }
 

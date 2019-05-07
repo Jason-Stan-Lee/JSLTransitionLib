@@ -5,26 +5,22 @@
 import UIKit
 
 /// 模态推出页面，默认转场动画
-final class PresentAnimatedTransitioning: BasicViewControllerAnimatedTransitioning {
+public final class PresentAnimatedTransitioning: BasicViewControllerAnimatedTransitioning {
 
     private(set) var type: PresentAnimatedType
     private var animations: (() -> Void)?
 
-    override convenience init() {
-        self.init(type: .present, animations: nil)
-    }
-
-    convenience init(type: PresentAnimatedType) {
+    public convenience init(type: PresentAnimatedType) {
         self.init(type: type, animations: nil)
     }
 
-    init(type: PresentAnimatedType, animations: (() -> Void)?) {
+    public init(type: PresentAnimatedType, animations: (() -> Void)?) {
         self.type = type
         self.animations = animations
         super.init()
     }
 
-    override func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    override public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let toVC = transitionContext.viewController(forKey: .to),
             let fromVC = transitionContext.viewController(forKey: .from) else {
                 return
