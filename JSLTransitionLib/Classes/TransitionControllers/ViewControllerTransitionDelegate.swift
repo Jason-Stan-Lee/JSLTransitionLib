@@ -10,7 +10,7 @@ public final class ViewControllerTransitionDelegate: NSObject {
     private var interactiveTransition: UIPercentDrivenInteractiveTransition?
     private var interactivePresentingViewController: UIViewController?
     private var interactiveGestureRecognizer: UIPanGestureRecognizer?
-    private var currentInteractiveTransitionType: TransitioningType = .none
+    private var currentInteractiveTransitionType: ModalTransitioningType = .none
     private var interactiveTransitionPercentComplete: CGFloat = 0
 
     private(set) weak var presentedViewController: UIViewController?
@@ -265,7 +265,7 @@ extension ViewControllerTransitionDelegate: UIViewControllerTransitioningDelegat
                              presenting: UIViewController,
                              source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         // 获取转场动画
-        let transitioning = presented.viewControllerAnimatedTransitioning(for: TransitioningType.presented) ?? PresentAnimatedTransitioning(type: .present)
+        let transitioning = presented.viewControllerAnimatedTransitioning(for: ModalTransitioningType.presented) ?? PresentAnimatedTransitioning(type: .present)
         transitioning.delegate = self
         isTransitioning = true
 
@@ -274,7 +274,7 @@ extension ViewControllerTransitionDelegate: UIViewControllerTransitioningDelegat
 
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         // 获取转场动画
-        let transitioning = dismissed.viewControllerAnimatedTransitioning(for: TransitioningType.dismiss) ?? PresentAnimatedTransitioning(type: .dismiss)
+        let transitioning = dismissed.viewControllerAnimatedTransitioning(for: ModalTransitioningType.dismiss) ?? PresentAnimatedTransitioning(type: .dismiss)
         transitioning.delegate = self
         isTransitioning = true
 

@@ -67,34 +67,34 @@ extension FirstViewController {
     }
 
     // return the TransitioningType which you want to triger
-    override func interactiveTransitionType(for location: CGPoint, translation: CGPoint) -> TransitioningType {
+    override func interactiveTransitionType(for location: CGPoint, translation: CGPoint) -> ModalTransitioningType {
         return super.interactiveTransitionType(for: location, translation: translation)
     }
 
     // Simultaneously if return True
-    override func interactiveGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer, for transitionType: TransitioningType) -> Bool {
+    override func interactiveGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer, for transitionType: ModalTransitioningType) -> Bool {
         return super.interactiveGestureRecognizer(gestureRecognizer, shouldRecognizeSimultaneouslyWith: otherGestureRecognizer, for: transitionType)
     }
 
     // Fractional process for interactive transition
-    override func interactiveTransitionCompletePercent(for transitionType: TransitioningType, location: CGPoint, translation: CGPoint) -> CGFloat {
+    override func interactiveTransitionCompletePercent(for transitionType: ModalTransitioningType, location: CGPoint, translation: CGPoint) -> CGFloat {
         return super.interactiveTransitionCompletePercent(for: transitionType, location: location, translation: translation)
     }
 
-    override func startInteractive(for transitionType: TransitioningType) {
+    override func startInteractive(for transitionType: ModalTransitioningType) {
         // interactive transition start
     }
 
-    override func finishInteractive(for transitionType: TransitioningType) {
+    override func finishInteractive(for transitionType: ModalTransitioningType) {
         // interactive transition finished
     }
 
-    override func cancelInteractive(for transitionType: TransitioningType) {
+    override func cancelInteractive(for transitionType: ModalTransitioningType) {
         // interactive transition cancelled
     }
 
     // TransitioningAnimator
-    override func viewControllerAnimatedTransitioning(for transitionType: TransitioningType) -> BasicViewControllerAnimatedTransitioning? {
+    override func viewControllerAnimatedTransitioning(for transitionType: ModalTransitioningType) -> BasicViewControllerAnimatedTransitioning? {
 
         // override to Return custom Animator for each transitionType
         // The Animator must be a subclass of 'BasicViewControllerAnimatedTransitioning'

@@ -10,7 +10,7 @@ import UIKit
 /// - presented: 被模态推出
 /// - presentTo: 模态推出其他视图
 /// - none: 无转场
-@objc public enum TransitioningType: Int {
+@objc public enum ModalTransitioningType: Int {
     case dismiss, presented, presentTo, none
 
     /// 是否支持手势交互
@@ -53,7 +53,7 @@ protocol ViewControllerTransitionProtocol {
     var isTransitioning: Bool { get }
 
     /// 转场动画，nil 则为默认
-    func viewControllerAnimatedTransitioning(for transitionType: TransitioningType) -> BasicViewControllerAnimatedTransitioning?
+    func viewControllerAnimatedTransitioning(for transitionType: ModalTransitioningType) -> BasicViewControllerAnimatedTransitioning?
 
     /// UIPresentationController, nil 则为默认
     func presentationController(for presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController?
@@ -61,10 +61,10 @@ protocol ViewControllerTransitionProtocol {
     /// 开始接收 Touch，返回 false 取消
     func interactiveTransitionGestureShouldReceive(touch: UITouch) -> Bool
     /// 转场类型类型，禁止转场返回 TransitioningType.none
-    func interactiveTransitionType(for location: CGPoint, translation: CGPoint) -> TransitioningType
+    func interactiveTransitionType(for location: CGPoint, translation: CGPoint) -> ModalTransitioningType
 
     /// 位移和起始位置，返回进度
-    func interactiveTransitionCompletePercent(for transitionType: TransitioningType,
+    func interactiveTransitionCompletePercent(for transitionType: ModalTransitioningType,
                                               location: CGPoint,
                                               translation: CGPoint) -> CGFloat
 
@@ -72,14 +72,14 @@ protocol ViewControllerTransitionProtocol {
     func viewControllerForInteractivePresentTo() -> UIViewController?
 
     /// 开始
-    func startInteractive(for transitionType: TransitioningType)
+    func startInteractive(for transitionType: ModalTransitioningType)
     /// 完成
-    func finishInteractive(for transitionType: TransitioningType)
+    func finishInteractive(for transitionType: ModalTransitioningType)
     /// 取消
-    func cancelInteractive(for transitionType: TransitioningType)
+    func cancelInteractive(for transitionType: ModalTransitioningType)
 
     /// 与转场交互手势冲突时，是否可以同时进行
-    func interactiveGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer, for transitionType: TransitioningType) -> Bool
+    func interactiveGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer, for transitionType: ModalTransitioningType) -> Bool
 
     /// 用于 ViewControllerTransition 的子视图控制器，默认为 nil
     func childViewControllerForViewControllerTransitioning() -> UIViewController?
@@ -150,7 +150,7 @@ extension UIViewController: ViewControllerTransitionProtocol {
     }
 
     /// Custom Animator for the transitionType
-    @objc open func viewControllerAnimatedTransitioning(for transitionType: TransitioningType) -> BasicViewControllerAnimatedTransitioning? {
+    @objc open func viewControllerAnimatedTransitioning(for transitionType: ModalTransitioningType) -> BasicViewControllerAnimatedTransitioning? {
         return childViewControllerForViewControllerTransitioning()?.viewControllerAnimatedTransitioning(for: transitionType)
     }
 
@@ -173,7 +173,7 @@ extension UIViewController: ViewControllerTransitionProtocol {
     }
 
     // Return the TransitioningType which you want to triger
-    @objc open func interactiveTransitionType(for location: CGPoint, translation: CGPoint) -> TransitioningType {
+    @objc open func interactiveTransitionType(for location: CGPoint, translation: CGPoint) -> ModalTransitioningType {
 
         if let type = childViewControllerForViewControllerTransitioning()?.interactiveTransitionType(for: location, translation: translation) {
             return type
@@ -181,16 +181,16 @@ extension UIViewController: ViewControllerTransitionProtocol {
 
         if abs(translation.x) < abs(translation.y) {
             if translation.y > 0  {
-                return TransitioningType.dismiss
+                return ModalTransitioningType.dismiss
             }
-            return TransitioningType.presentTo
+            return ModalTransitioningType.presentTo
         }
 
-        return TransitioningType.none
+        return ModalTransitioningType.none
     }
 
     // Fractional process for interactive transition
-    @objc open func interactiveTransitionCompletePercent(for transitionType: TransitioningType,
+    @objc open func interactiveTransitionCompletePercent(for transitionType: ModalTransitioningType,
                                                     location: CGPoint,
                                                     translation: CGPoint) -> CGFloat {
 
@@ -211,22 +211,22 @@ extension UIViewController: ViewControllerTransitionProtocol {
     }
 
     // Callback interactive transition start
-    @objc open func startInteractive(for transitionType: TransitioningType) {
+    @objc open func startInteractive(for transitionType: ModalTransitioningType) {
         childViewControllerForViewControllerTransitioning()?.startInteractive(for: transitionType)
     }
 
     // Callback interactive transition finished
-    @objc open func finishInteractive(for transitionType: TransitioningType) {
+    @objc open func finishInteractive(for transitionType: ModalTransitioningType) {
         childViewControllerForViewControllerTransitioning()?.finishInteractive(for: transitionType)
     }
 
     // Callback interactive transition cancelled
-    @objc open func cancelInteractive(for transitionType: TransitioningType) {
+    @objc open func cancelInteractive(for transitionType: ModalTransitioningType) {
         childViewControllerForViewControllerTransitioning()?.cancelInteractive(for: transitionType)
     }
 
     // Simultaneously gestureRecognizers if return True
-    @objc open func interactiveGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer, for transitionType: TransitioningType) -> Bool {
+    @objc open func interactiveGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer, for transitionType: ModalTransitioningType) -> Bool {
         return childViewControllerForViewControllerTransitioning()?.interactiveGestureRecognizer(gestureRecognizer, shouldRecognizeSimultaneouslyWith: otherGestureRecognizer, for: transitionType) ?? (
             (otherGestureRecognizer as? UIPanGestureRecognizer == nil &&
                 otherGestureRecognizer as? UISwipeGestureRecognizer == nil))
