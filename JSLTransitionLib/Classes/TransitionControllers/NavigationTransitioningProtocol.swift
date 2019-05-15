@@ -10,10 +10,10 @@ import UIKit
 protocol NavigationTransitioningProtocol {
 
     /// 是否允许交互 pop, 默认 true
-    var isNavigationInteractivePopEnabled: Bool { set get }
+    var isInteractivePopEnabled: Bool { set get }
 
     /// 是否正在交互 pop
-    var isNavigationInteractivePoping: Bool { get }
+    var isInteractivePoping: Bool { get }
 
     /// 是否正在过渡动画
     var isNavigationTransitioning: Bool { get }
@@ -64,20 +64,20 @@ protocol NavigationTransitioningProtocol {
 
 extension UIViewController: NavigationTransitioningProtocol {
 
-    var isNavigationInteractivePopEnabled: Bool {
+    var isInteractivePopEnabled: Bool {
         get {
-            let popEnable = childViewControllerForNavigationControllerTransitioning()?.isNavigationInteractivePopEnabled
-            guard let value = objc_getAssociatedObject(self, &AssociatedKeys.isNavigationInteractivePopEnabled) as? Bool else {
+            let popEnable = childViewControllerForNavigationControllerTransitioning()?.isInteractivePopEnabled
+            guard let value = objc_getAssociatedObject(self, &AssociatedKeys.isInteractivePopEnabled) as? Bool else {
                 return popEnable ?? true
             }
             return popEnable ?? value
         }
         set(newValue) {
-            objc_setAssociatedObject(self, &AssociatedKeys.isNavigationInteractivePopEnabled, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &AssociatedKeys.isInteractivePopEnabled, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 
-    var isNavigationInteractivePoping: Bool {
+    var isInteractivePoping: Bool {
         guard let delegate = self.navigationTransitioningDelegate else {
             return false
         }

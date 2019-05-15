@@ -173,7 +173,7 @@ extension NavigationTransitioningDelegate: UIGestureRecognizerDelegate {
         if !checkDelegate() || // 代理无效
             isTransitioning || // 转场过程中
             navi.viewControllers.count <= 1 || // 不是非根视图
-            !topViewController.isNavigationInteractivePopEnabled /* 不支持滑动手势 */ {
+            !topViewController.isInteractivePopEnabled /* 不支持滑动手势 */ {
             return false
         }
 
