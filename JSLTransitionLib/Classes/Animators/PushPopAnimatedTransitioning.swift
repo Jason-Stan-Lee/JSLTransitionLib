@@ -38,7 +38,9 @@ class PushPopAnimatedTransitioning: BasicViewControllerAnimatedTransitioning {
 
     override func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let toVC = transitionContext.viewController(forKey: .to),
-            let fromVC = transitionContext.viewController(forKey: .from) else {
+            let fromVC = transitionContext.viewController(forKey: .from),
+            let toView = transitionContext.view(forKey: .to),
+            let fromView = transitionContext.view(forKey: .from) else {
             return
         }
 
@@ -50,19 +52,19 @@ class PushPopAnimatedTransitioning: BasicViewControllerAnimatedTransitioning {
         let viewWidth     = finalFrame.width
 
         if type.contains(.push) {
-            toVC.view.frame = finalFrame.offsetBy(dx: (type.contains(.left) ? viewWidth : -viewWidth), dy: 0)
-            containerView.addSubview(toVC.view)
+            toView.frame = finalFrame.offsetBy(dx: (type.contains(.left) ? viewWidth : -viewWidth), dy: 0)
+            containerView.addSubview(toView)
         } else {
-            toVC.view.frame = finalFrame.offsetBy(dx: ((type.contains(.left) ? viewWidth : -viewWidth)) * 0.3, dy: 0)
-            containerView.insertSubview(toVC.view, belowSubview: fromVC.view)
+            toView.frame = finalFrame.offsetBy(dx: ((type.contains(.left) ? viewWidth : -viewWidth)) * 0.3, dy: 0)
+            containerView.insertSubview(toView, belowSubview: fromView)
         }
 
         UIView.animate(withDuration: self.transitionDuration(using: transitionContext), animations: {
             toVC.view.frame = finalFrame
             if self.type.contains(.push) {
-                fromVC.view.frame = initialFrame.offsetBy(dx: (self.type.contains(.right) ? viewWidth : -viewWidth) * 0.3, dy: 0)
+                fromView.frame = initialFrame.offsetBy(dx: (self.type.contains(.right) ? viewWidth : -viewWidth) * 0.3, dy: 0)
             } else {
-                fromVC.view.frame = initialFrame.offsetBy(dx: self.type.contains(.right) ? viewWidth : -viewWidth, dy: 0)
+                fromView.frame = initialFrame.offsetBy(dx: self.type.contains(.right) ? viewWidth : -viewWidth, dy: 0)
             }
 
             // 自定义操作

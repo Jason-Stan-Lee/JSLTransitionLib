@@ -33,7 +33,8 @@ JSLTransitionLib is available under the MIT license. See the LICENSE file for mo
 
 ## 使用方式
 
-#### 设置转场代理
+#### 模态转场
+支持交互 Dismiss 与 Present
 
 - 设置视图控制器转场代理
 ```
@@ -109,3 +110,83 @@ func finishInteractive(for transitionType: TransitioningType)
 /// 取消
 func cancelInteractive(for transitionType: TransitioningType)
 ```
+#### 导航转场
+目前只支持交互 Dismiss，暂不支持交互 Push
+
+- 设置视图控制器转场代理
+```
+// 设置单独视图控制器转场代理，不与其他视图控制器共用
+let customTransitionVC = UIViewController()
+customTransitionVC.navigationTransitioningDelegate = NavigationTransitioningDelegate(navigationController: customTransitionVC)
+
+// 导航视图控制器，其子视图控制器共用同一转场代理，每个子视图控制器可以配置特有的转场动画，也可以由其父视图控制器统一配置其所有子视图的统一动画
+let customTransitionNC = UINavigationController()
+customTransitionNC.navigationTransitioningDelegate = NavigationTransitioningDelegate(navigationController: customTransitionNC)
+
+// 工具栏控视图制器，其子视图控制器可以有自己独有的转场动画
+let customTransitionTC = UITabBarController()
+customTransitionTC.navigationTransitioningDelegate = NavigationTransitioningDelegate(navigationController: customTransitionTC)
+
+```
+- 配置自定义转场动画
+
+```
+/// 根据 operation 转场动画, nil 为默认动画, 可重载返回定义转场动画
+///
+/// - Parameters:
+///   - forOperation: 转场方式
+///   - interactive: 是否为交互 pop
+/// - Returns: 转场动画, nil 为默认
+func navigationControllerAnimatedTransitioning(forOperation: UINavigationController.Operation, interactive: Bool) -> BasicViewControllerAnimatedTransitioning?
+
+```
+- 交互转场控制
+
+```
+/** 设置指定页面是否支持交互转场 **/
+/// 是否允许交互 Dismiss
+var isInteractivePopEnabled: Bool { get set }
+
+/** 设置转场手势的触发逻辑「手势触发的位置」、「手势触发的方向」 **/
+
+/// 开始收到交互手势
+///
+/// - Parameter touch: 手势
+/// - Returns: 返回 false 取消交互, 默认 true
+func interactivePopGestureShouldReceive(touch: UITouch) -> Bool
+
+/// 开始移动手势
+///
+/// - Parameter translation: 位移
+/// - Returns: 返回 false 取消交互, 默认 true
+func interactivePopGestureShouldBegin(translation: CGPoint) -> Bool
+
+/// 通过位移和开始位置，计算 pop 的进度
+///
+/// - Parameters:
+///   - translation: 位移
+///   - startPoint: 开始位置
+/// - Returns: 完成进度 0 ~ 1
+func navigationInteractivePopCompletePercent(forTranslation: CGPoint,
+startPoint: CGPoint) -> CGFloat
+
+```
+- 交互转场过程
+
+```
+
+/// 是否正在交互 pop
+var isInteractivePoping: Bool { get }
+
+/// 是否正在过渡动画
+var isNavigationTransitioning: Bool { get }
+
+/// 开始
+func startInteractivePop()
+/// 完成
+func finishInteractivePop()
+/// 取消
+func cancleInteractivePop()
+
+```
+

@@ -6,6 +6,26 @@ import UIKit
 
 //----------------------------------------------------------
 
+extension UIViewController {
+
+    /// Store the navigationTransitioningDelegate
+    public var navigationTransitioningDelegateS: NavigationTransitioningDelegate? {
+        get {
+            guard let value = objc_getAssociatedObject(self, &AssociatedKeys.navigationTransitioningDelegateS) as? NavigationTransitioningDelegate else {
+                return nil
+            }
+            return  value
+        }
+
+        set(newValue) {
+            objc_setAssociatedObject(self, &AssociatedKeys.navigationTransitioningDelegateS, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+
+}
+
+//----------------------------------------------------------
+
 /// 导航转场控制协议
 protocol NavigationTransitioningProtocol {
 
@@ -64,7 +84,7 @@ protocol NavigationTransitioningProtocol {
 
 extension UIViewController: NavigationTransitioningProtocol {
 
-    var isInteractivePopEnabled: Bool {
+    @objc open var isInteractivePopEnabled: Bool {
         get {
             let popEnable = childViewControllerForNavigationControllerTransitioning()?.isInteractivePopEnabled
             guard let value = objc_getAssociatedObject(self, &AssociatedKeys.isInteractivePopEnabled) as? Bool else {
@@ -77,14 +97,14 @@ extension UIViewController: NavigationTransitioningProtocol {
         }
     }
 
-    var isInteractivePoping: Bool {
+    public var isInteractivePoping: Bool {
         guard let delegate = self.navigationTransitioningDelegate else {
             return false
         }
         return delegate.isInteractivePoping
     }
 
-    var isNavigationTransitioning: Bool {
+    public var isNavigationTransitioning: Bool {
         guard let delegate = self.navigationTransitioningDelegate else {
             return false
         }
@@ -95,22 +115,22 @@ extension UIViewController: NavigationTransitioningProtocol {
     var navigationTransitioningDelegate: NavigationTransitioningDelegate? {
         var navigation: UINavigationController?
         if let navi = self as? UINavigationController {
-        navigation = navi
+            navigation = navi
         } else {
-        navigation = self.navigationController
+            navigation = self.navigationController
         }
 
         guard let transitioningDelegate = navigation?.delegate as? NavigationTransitioningDelegate else {
-        return self.parent?.navigationTransitioningDelegate
+            return self.parent?.navigationTransitioningDelegate
         }
         return transitioningDelegate
     }
 
-    @objc func navigationControllerAnimatedTransitioning(forOperation: UINavigationController.Operation, interactive: Bool) -> BasicViewControllerAnimatedTransitioning? {
+    @objc open func navigationControllerAnimatedTransitioning(forOperation: UINavigationController.Operation, interactive: Bool) -> BasicViewControllerAnimatedTransitioning? {
         return self.childViewControllerForNavigationControllerTransitioning()?.navigationControllerAnimatedTransitioning(forOperation: forOperation, interactive: interactive)
     }
 
-    @objc func interactivePopGestureShouldReceive(touch: UITouch) -> Bool {
+    @objc open func interactivePopGestureShouldReceive(touch: UITouch) -> Bool {
         guard let should =
             self.childViewControllerForNavigationControllerTransitioning()?
                 .interactivePopGestureShouldReceive(touch:touch) else {
@@ -119,7 +139,7 @@ extension UIViewController: NavigationTransitioningProtocol {
         return should
     }
 
-    @objc func interactivePopGestureShouldBegin(translation: CGPoint) -> Bool {
+    @objc open func interactivePopGestureShouldBegin(translation: CGPoint) -> Bool {
         guard let should =
             self.childViewControllerForNavigationControllerTransitioning()?
                 .interactivePopGestureShouldBegin(translation:translation) else {
@@ -128,7 +148,7 @@ extension UIViewController: NavigationTransitioningProtocol {
         return should
     }
 
-    @objc func navigationInteractivePopCompletePercent(forTranslation: CGPoint, startPoint: CGPoint) -> CGFloat {
+    @objc open func navigationInteractivePopCompletePercent(forTranslation: CGPoint, startPoint: CGPoint) -> CGFloat {
         if let childViewController = self.childViewControllerForNavigationControllerTransitioning() {
             return childViewController.navigationInteractivePopCompletePercent(forTranslation:forTranslation, startPoint:startPoint)
         } else {
@@ -136,19 +156,19 @@ extension UIViewController: NavigationTransitioningProtocol {
         }
     }
 
-    @objc func startInteractivePop() {
+    @objc open func startInteractivePop() {
         self.childViewControllerForNavigationControllerTransitioning()?.startInteractivePop()
     }
 
-    @objc func finishInteractivePop() {
+    @objc open func finishInteractivePop() {
         self.childViewControllerForNavigationControllerTransitioning()?.finishInteractivePop()
     }
 
-    @objc func cancleInteractivePop() {
+    @objc open func cancleInteractivePop() {
         self.childViewControllerForNavigationControllerTransitioning()?.cancleInteractivePop()
     }
 
-    @objc func childViewControllerForNavigationControllerTransitioning() -> UIViewController? {
+    @objc open func childViewControllerForNavigationControllerTransitioning() -> UIViewController? {
         if let tabBarController = self as? UITabBarController {
             return tabBarController.selectedViewController
         }

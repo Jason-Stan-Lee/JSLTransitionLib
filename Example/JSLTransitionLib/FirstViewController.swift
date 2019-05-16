@@ -21,12 +21,22 @@ class FirstViewController: UIViewController {
         button.layer.borderColor = UIColor.black.cgColor
         button.layer.borderWidth = 1
         button.layer.cornerRadius = 5
-        button.addTarget(self, action: #selector(presentSecondViewController), for: .touchUpInside)
+        button.addTarget(self, action: #selector(nextButtonAction), for: .touchUpInside)
         return button
+    }()
+
+    private lazy var tipsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "下滑返回菜单"
+        label.textAlignment = .center
+        return label
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        view.addSubview(tipsLabel)
+        tipsLabel.frame = CGRect(x: 0, y: 100, width: 320, height: 32)
 
         view.backgroundColor = .orange
         if type == .presentTo {
@@ -44,9 +54,13 @@ class FirstViewController: UIViewController {
     }
 
     @objc
-    private func presentSecondViewController() {
+    private func nextButtonAction() {
         let secondVC = secondViewController()
-        self.present(secondVC, animated: true, completion: nil)
+        if type == .normal {
+            self.present(secondVC, animated: true, completion: nil)
+        } else if type == .navigation {
+            self.navigationController?.pushViewController(secondVC, animated: true)
+        }
     }
 
     private func secondViewController() -> UIViewController {

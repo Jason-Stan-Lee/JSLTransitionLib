@@ -10,7 +10,7 @@ import UIKit
 import JSLTransitionLib
 
 enum DemoType {
-    case normal, semi, presentTo
+    case normal, semi, presentTo, navigation
 }
 
 class DemoViewController: UIViewController {
@@ -30,9 +30,10 @@ class DemoViewController: UIViewController {
 
     private lazy var sourceDatas: [SourceData] = {
         let rawValue: [[DemoType: String]] = [
-            [.normal: "普通类型自定义转场"],
-            [.semi: "半弹窗类型自定义转场"],
-            [.presentTo: "上滑模态推出下一页面"]
+            [.normal: "Present 交互 Dismiss"],
+            [.semi: "半弹窗 Present, 交互 Dismiss"],
+            [.presentTo: "交互 Present"],
+            [.navigation: "Push, 交互 Pop"],
         ]
 
         var sourceDatas: [SourceData] = []
@@ -79,6 +80,7 @@ extension DemoViewController: UITableViewDelegate, UITableViewDataSource {
 
         let navi = UINavigationController(rootViewController: fistViewController)
         navi.presentationTransitioningDelegateS = ViewControllerTransitionDelegate(presentedViewController: navi)
+        navi.navigationTransitioningDelegateS = NavigationTransitioningDelegate(navigationController: navi)
         self.present(navi, animated: true, completion: nil)
     }
 
