@@ -36,12 +36,7 @@ open class BasicViewControllerAnimatedTransitioning: NSObject, UIViewControllerA
     ///   - transitionContext: 转场上下文
     ///   - isFinished: CA 动画是否完成，不需要做其他逻辑判断
     open func didEndTransitioningAnimation(transitionContext: UIViewControllerContextTransitioning, isFinished: Bool) {
-        let cancelled = transitionContext.transitionWasCancelled
-        var isCompleted = !cancelled
-        if !isFinished {
-            // isFinished 由于异常中断 也需要动画结束
-            isCompleted = true
-        }
+        let isCompleted = !transitionContext.transitionWasCancelled
         transitionContext.completeTransition(isCompleted)
         delegate?.viewControllerAnimatedTransitioning(self, didEndTransitioning: isCompleted)
     }
