@@ -39,15 +39,15 @@ class FirstViewController: UIViewController {
         tipsLabel.frame = CGRect(x: 0, y: 100, width: 320, height: 32)
 
         view.backgroundColor = .orange
-        if type == .presentTo {
-            self.isInteractivePresentToEnable = true
-        } else {
+        switch type {
+        case .presentTo:
+            isInteractivePresentToEnable = true
+            tipsLabel.text = "下滑返回菜单，上滑推出新页面"
+        case .semi:
+            preferredContentSize = CGSize(width: view.bounds.height, height: view.bounds.height * 0.4)
+        default:
             view.addSubview(nextButton)
             nextButton.frame = CGRect(x: 100, y: 200, width: 100, height: 32)
-        }
-
-        if type == .semi {
-            self.preferredContentSize = CGSize(width: view.bounds.height, height: view.bounds.height * 0.4)
         }
 
         // Do any additional setup after loading the view.
