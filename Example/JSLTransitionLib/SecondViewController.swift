@@ -15,7 +15,10 @@ class SecondViewController: UIViewController {
         view.backgroundColor = .green
         // Do any additional setup after loading the view.
     }
-    
+
+    override func interactivePopGestureShouldReceive(touch: UITouch) -> Bool {
+        return true
+    }
 
     /*
     // MARK: - Navigation

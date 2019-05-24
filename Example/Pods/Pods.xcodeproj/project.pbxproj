@@ -19,6 +19,9 @@
 		813D00E20639F9F70C8C4E0F24F62988 /* Pods-JSLTransitionLib_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E4170C725E2278DDAAB80225A0EA8F9 /* Pods-JSLTransitionLib_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B059F2C31E9143142764C847DB500A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
 		A1903F7F0A9FD2AFDAA9922FFEB90429 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		A1D48D0C2285843E003E50C5 /* NavigationTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D48D0A2285843E003E50C5 /* NavigationTransitioningDelegate.swift */; };
+		A1D48D0D2285843E003E50C5 /* NavigationTransitioningProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D48D0B2285843E003E50C5 /* NavigationTransitioningProtocol.swift */; };
+		A1D48D0F228585C0003E50C5 /* PushPopAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D48D0E228585C0003E50C5 /* PushPopAnimatedTransitioning.swift */; };
 		E19A97F9997B566A122FFA3635BA5522 /* AssociatedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6538B6569BC21B35D1003FB89C3D76 /* AssociatedKeys.swift */; };
 		F008C3474F8B0B35D2D16D9CA2E1C5DB /* ViewControllerTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62E151C74978F41C5F17D374F7479DF /* ViewControllerTransitionDelegate.swift */; };
 		FFA8EBE15BBDAAAAC4555A578421175C /* Pods-JSLTransitionLib_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AF7902B89815CB7F19EC4EAC401C28A1 /* Pods-JSLTransitionLib_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -53,20 +56,23 @@
 		4D5979BD903B0149CA7C9C9FC61F4307 /* Pods-JSLTransitionLib_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JSLTransitionLib_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4E4170C725E2278DDAAB80225A0EA8F9 /* Pods-JSLTransitionLib_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JSLTransitionLib_Example-umbrella.h"; sourceTree = "<group>"; };
 		55C9F8417BE2371A13961E7D188DEAA9 /* Pods-JSLTransitionLib_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JSLTransitionLib_Tests.modulemap"; sourceTree = "<group>"; };
-		59BCCFD1F0D12B8D7787083AC52B7315 /* JSLTransitionLib.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = JSLTransitionLib.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		59BCCFD1F0D12B8D7787083AC52B7315 /* JSLTransitionLib.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = JSLTransitionLib.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		623265E9AA7DA8677A4A0681B1738173 /* SemiPresentationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SemiPresentationController.swift; sourceTree = "<group>"; };
 		6305128819E44B45DC3AE948EB7E8AAC /* JSLTransitionLib-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JSLTransitionLib-prefix.pch"; sourceTree = "<group>"; };
-		69FC5AB2164C4E7370BE9789495CAAAC /* Pods_JSLTransitionLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JSLTransitionLib_Tests.framework; path = "Pods-JSLTransitionLib_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		708FE58DFE2BC1154A4869FC24220B79 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		69FC5AB2164C4E7370BE9789495CAAAC /* Pods_JSLTransitionLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSLTransitionLib_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		708FE58DFE2BC1154A4869FC24220B79 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		72A3CE5BF604D09E7A1B6F9A2D9A0C7A /* Pods-JSLTransitionLib_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JSLTransitionLib_Example-dummy.m"; sourceTree = "<group>"; };
 		826A696CED47A9F5DC4A973BE27B3A41 /* Pods-JSLTransitionLib_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JSLTransitionLib_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		8CDC53A4CC2297F09009F0F432723E59 /* JSLTransitionLib-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JSLTransitionLib-dummy.m"; sourceTree = "<group>"; };
 		8FC8505A1EF3E9DEE1D67F50A2C85881 /* Pods-JSLTransitionLib_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JSLTransitionLib_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9CA1E406B7FB6BEF5685C08A714966D9 /* JSLTransitionLib.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JSLTransitionLib.modulemap; sourceTree = "<group>"; };
 		9CE55BD232CCD00934A459DFCF409B76 /* PresentAnimatedTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PresentAnimatedTransitioning.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9DF16378DB8112DD02859B6918BB754C /* JSLTransitionLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JSLTransitionLib.framework; path = JSLTransitionLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DF16378DB8112DD02859B6918BB754C /* JSLTransitionLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSLTransitionLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E0E73CEE5A54BBE7949E9353EE106C6 /* Pods-JSLTransitionLib_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JSLTransitionLib_Tests-dummy.m"; sourceTree = "<group>"; };
+		A1D48D0A2285843E003E50C5 /* NavigationTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationTransitioningDelegate.swift; sourceTree = "<group>"; };
+		A1D48D0B2285843E003E50C5 /* NavigationTransitioningProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationTransitioningProtocol.swift; sourceTree = "<group>"; };
+		A1D48D0E228585C0003E50C5 /* PushPopAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushPopAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		AF7902B89815CB7F19EC4EAC401C28A1 /* Pods-JSLTransitionLib_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JSLTransitionLib_Tests-umbrella.h"; sourceTree = "<group>"; };
 		B62E151C74978F41C5F17D374F7479DF /* ViewControllerTransitionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewControllerTransitionDelegate.swift; sourceTree = "<group>"; };
 		BEC9B60C4D99038109663F3F885673F4 /* Pods-JSLTransitionLib_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JSLTransitionLib_Example.modulemap"; sourceTree = "<group>"; };
@@ -75,9 +81,9 @@
 		D19AC086AE0D3571DD420C998A82C300 /* Pods-JSLTransitionLib_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JSLTransitionLib_Example-Info.plist"; sourceTree = "<group>"; };
 		D68C06AAF85F4D3F23054DF4F2EEE78E /* Pods-JSLTransitionLib_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JSLTransitionLib_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D8ECB500A8A01E58BB695C81E2A85FA5 /* Pods-JSLTransitionLib_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JSLTransitionLib_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		DBD2032DD8B8B70D8382B49AE95E9CD8 /* Pods_JSLTransitionLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JSLTransitionLib_Example.framework; path = "Pods-JSLTransitionLib_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBD2032DD8B8B70D8382B49AE95E9CD8 /* Pods_JSLTransitionLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSLTransitionLib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB1F03AF5D8B4375889731784AA6F56 /* JSLTransitionLib-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JSLTransitionLib-umbrella.h"; sourceTree = "<group>"; };
-		F498E8B2D9449CC18AA01594A22B00A9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		F498E8B2D9449CC18AA01594A22B00A9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		FC6538B6569BC21B35D1003FB89C3D76 /* AssociatedKeys.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AssociatedKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +136,8 @@
 		66D6C3BF7973AFE70E66B8E66A8A3191 /* TransitionControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A1D48D0A2285843E003E50C5 /* NavigationTransitioningDelegate.swift */,
+				A1D48D0B2285843E003E50C5 /* NavigationTransitioningProtocol.swift */,
 				FC6538B6569BC21B35D1003FB89C3D76 /* AssociatedKeys.swift */,
 				B62E151C74978F41C5F17D374F7479DF /* ViewControllerTransitionDelegate.swift */,
 				0B26CAB6F70B920CD5BC69C50BBD64F2 /* ViewControllerTransitionProtocol.swift */,
@@ -233,6 +241,7 @@
 				022FE2B6BFCE7EE0F75148C4993D8341 /* BasicViewControllerAnimatedTransitioning.swift */,
 				9CE55BD232CCD00934A459DFCF409B76 /* PresentAnimatedTransitioning.swift */,
 				623265E9AA7DA8677A4A0681B1738173 /* SemiPresentationController.swift */,
+				A1D48D0E228585C0003E50C5 /* PushPopAnimatedTransitioning.swift */,
 			);
 			name = Animators;
 			path = JSLTransitionLib/Classes/Animators;
@@ -413,10 +422,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D48D0D2285843E003E50C5 /* NavigationTransitioningProtocol.swift in Sources */,
 				E19A97F9997B566A122FFA3635BA5522 /* AssociatedKeys.swift in Sources */,
+				A1D48D0F228585C0003E50C5 /* PushPopAnimatedTransitioning.swift in Sources */,
 				0CB1FE0022E366346A96FD2403CD43F5 /* BasicViewControllerAnimatedTransitioning.swift in Sources */,
 				0F390E1308C1772C27298F051CB88493 /* JSLTransitionLib-dummy.m in Sources */,
 				570DAA2658D5BBB8048B2BD1ED1F93B5 /* PresentAnimatedTransitioning.swift in Sources */,
+				A1D48D0C2285843E003E50C5 /* NavigationTransitioningDelegate.swift in Sources */,
 				743A91CFCBE2E21EE622885134AF6122 /* SemiPresentationController.swift in Sources */,
 				F008C3474F8B0B35D2D16D9CA2E1C5DB /* ViewControllerTransitionDelegate.swift in Sources */,
 				0F3BE47E1877E07EB1351E0D7829CD3C /* ViewControllerTransitionProtocol.swift in Sources */,
@@ -658,8 +670,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
