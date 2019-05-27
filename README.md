@@ -1,4 +1,4 @@
-# JSLTransitionLib
+![JSLTransitionLib](https://raw.githubusercontent.com/Jason-Stan-Lee/JSLTransitionLib/assets/CoverImage/coverimage.jpg)
 
 [![CI Status](https://api.travis-ci.org/repos/Jason-Stan-Lee/JSLTransitionLib.svg?style=flat)](https://travis-ci.org/Jason-Stan-Lee/JSLTransitionLib)
 [![Version](https://img.shields.io/cocoapods/v/JSLTransitionLib.svg?style=flat)](https://cocoapods.org/pods/JSLTransitionLib)
