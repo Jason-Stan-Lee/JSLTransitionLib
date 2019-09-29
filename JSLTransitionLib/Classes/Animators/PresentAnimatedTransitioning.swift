@@ -39,9 +39,6 @@ public final class PresentAnimatedTransitioning: BasicViewControllerAnimatedTran
             toV.frame = finalFrame.offsetBy(dx: 0, dy: finalFrame.height)
         }
 
-        fromVC.beginAppearanceTransition(false, animated: true)
-        toVC.beginAppearanceTransition(true, animated: true)
-
         UIView.animate(withDuration: self.transitionDuration(using: transitionContext), animations: {
             if self.type == .present {
                 if let toV = toVCView {
@@ -58,10 +55,6 @@ public final class PresentAnimatedTransitioning: BasicViewControllerAnimatedTran
             self.animations?()
         }, completion: { finished in
 
-            if transitionContext.transitionWasCancelled {
-                fromVC.endAppearanceTransition()
-                toVC.endAppearanceTransition()
-            }
             // 通知完成
             self.didEndTransitioningAnimation(transitionContext: transitionContext, isFinished: finished)
         })
