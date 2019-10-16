@@ -101,9 +101,11 @@ public class NavigationTransitioningDelegate: NSObject {
 
             let locationPoint = gestureRecognizer.location(in: navi.view)
             let translation   = gestureRecognizer.translation(in: navi.view)
+            let currentProgress = interactiveTransition?.percentComplete ?? 0
             // 完成比例
-            var fraction = topViewController.navigationInteractivePopCompletePercent(forTranslation: translation,
-                                                                                     startPoint: locationPoint) + (interactiveTransition?.percentComplete ?? 0)
+            var fraction = topViewController.navigationInteractivePopCompletePercent(currentProgress: currentProgress,
+                                                                                     translation: translation,
+                                                                                     startPoint: locationPoint) + (currentProgress)
             fraction = max(min(fraction, 1), 0)
             if state == .changed {
                 interactiveTransition?.update(fraction)
@@ -111,7 +113,7 @@ public class NavigationTransitioningDelegate: NSObject {
                 // 滑动速度
                 let velocity = gestureRecognizer.velocity(in: navi.view)
                 // 加上速度，与速度正比
-                fraction += topViewController.navigationInteractivePopCompletePercent(forTranslation: velocity,
+                fraction += topViewController.navigationInteractivePopCompletePercent(currentProgress: fraction, translation: velocity,
                                                                                       startPoint: locationPoint)
 
                 // 完成

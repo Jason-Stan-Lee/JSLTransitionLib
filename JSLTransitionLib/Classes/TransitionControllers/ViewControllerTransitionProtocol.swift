@@ -65,6 +65,7 @@ protocol ViewControllerTransitionProtocol {
 
     /// 位移和起始位置，返回进度
     func interactiveTransitionCompletePercent(for transitionType: ModalTransitioningType,
+                                              currentProgress: CGFloat,
                                               location: CGPoint,
                                               translation: CGPoint) -> CGFloat
 
@@ -191,11 +192,13 @@ extension UIViewController: ViewControllerTransitionProtocol {
 
     // Fractional process for interactive transition
     @objc open func interactiveTransitionCompletePercent(for transitionType: ModalTransitioningType,
-                                                    location: CGPoint,
-                                                    translation: CGPoint) -> CGFloat {
+                                                         currentProgress: CGFloat,
+                                                         location: CGPoint,
+                                                         translation: CGPoint) -> CGFloat {
 
         if let childVC = childViewControllerForViewControllerTransitioning() {
             return childVC.interactiveTransitionCompletePercent(for: transitionType,
+                                                                currentProgress: currentProgress,
                                                                 location: location,
                                                                 translation: translation)
         }

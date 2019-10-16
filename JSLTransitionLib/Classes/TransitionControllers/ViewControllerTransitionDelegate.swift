@@ -134,7 +134,11 @@ public final class ViewControllerTransitionDelegate: NSObject {
             let translation = interactiveGr.translation(in: interactivePresentingViewController?.view)
 
             // 完成比例
-            var fraction = presentedVC.interactiveTransitionCompletePercent(for: currentInteractiveTransitionType, location: locationPoint, translation: translation)
+            var fraction = presentedVC
+                .interactiveTransitionCompletePercent(for: currentInteractiveTransitionType,
+                                                      currentProgress: interactiveTransitionPercentComplete,
+                                                      location: locationPoint,
+                                                      translation: translation)
             fraction += interactiveTransitionPercentComplete
             if state == .changed {
                 interactiveTransitionPercentComplete = max(0, fraction)
@@ -142,7 +146,11 @@ public final class ViewControllerTransitionDelegate: NSObject {
             } else {
                 // 滑动速度
                 let velocity = interactiveGr.velocity(in: interactivePresentingViewController?.view)
-                fraction += presentedVC.interactiveTransitionCompletePercent(for: currentInteractiveTransitionType, location: locationPoint, translation: velocity)
+                fraction += presentedVC
+                    .interactiveTransitionCompletePercent(for: currentInteractiveTransitionType,
+                                                          currentProgress: interactiveTransitionPercentComplete,
+                                                          location: locationPoint,
+                                                          translation: velocity)
                 interactiveTransitionPercentComplete = max(0, fraction)
                 if (state == .ended && interactiveTransitionPercentComplete >= 0.4) || interactiveTransitionPercentComplete == 1 { // 完成
                     interactiveTransition.finish()
