@@ -83,6 +83,8 @@ extension FirstViewController {
     // return the TransitioningType which you want to triger
     override func interactiveTransitionType(for location: CGPoint, translation: CGPoint) -> ModalTransitioningType {
         return super.interactiveTransitionType(for: location, translation: translation)
+        // eg: pull down when the scroll view is scrolling to top.
+        // return .dismiss
     }
 
     // Simultaneously if return True
@@ -91,8 +93,33 @@ extension FirstViewController {
     }
 
     // Fractional process for interactive transition
-    override func interactiveTransitionCompletePercent(for transitionType: ModalTransitioningType, location: CGPoint, translation: CGPoint) -> CGFloat {
-        return super.interactiveTransitionCompletePercent(for: transitionType, location: location, translation: translation)
+    override func interactiveTransitionCompletePercent(for transitionType: ModalTransitioningType,
+                                                       currentProgress: CGFloat,
+                                                       location: CGPoint,
+                                                       translation: CGPoint) -> CGFloat {
+        return super.interactiveTransitionCompletePercent(for: transitionType,
+                                                          currentProgress: currentProgress,
+                                                          location: location,
+                                                          translation: translation)
+        /*
+         eg: pull down when the scroll view is scrolling to top.
+         
+         let offsetY = scrollView.contentOffset.y
+         scrollView.scrollEnabled = true
+         percent = super.interactiveTransitionCompletePercent(for: transitionType,
+                                                              currentProgress: currentProgress,
+                                                              location: location,
+                                                              translation: translation)
+         if offsetY <= 0,
+            percent > 0 {
+             return percent
+         }
+         if currentProgress < 1,
+            currentProgress > 0 {
+             scrollView.scrollEnabled = false
+             return percent
+         }
+         */
     }
 
     override func startInteractive(for transitionType: ModalTransitioningType) {

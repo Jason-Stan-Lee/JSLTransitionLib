@@ -83,9 +83,7 @@ func interactiveTransitionType(for location: CGPoint, translation: CGPoint) -> T
 
 /** 交互转场过程中的进度控制，location　和　translation 是每次触发手势事件的「阶段: fraction」位置和平移距离　**/
 /// 位移和起始位置，返回进度
-func interactiveTransitionCompletePercent(for transitionType: TransitioningType,
-location: CGPoint,
-translation: CGPoint) -> CGFloat
+func interactiveTransitionCompletePercent(for transitionType: TransitioningType, currentProgress: CGFloat, location: CGPoint, translation: CGPoint) -> CGFloat
 
 /// 与转场交互手势冲突时，是否可以同时进行，比如：上滑手势同时，页面的 scrollView 滚动等
 func interactiveGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer, for transitionType: TransitioningType) -> Bool
@@ -167,8 +165,7 @@ func interactivePopGestureShouldBegin(translation: CGPoint) -> Bool
 ///   - translation: 位移
 ///   - startPoint: 开始位置
 /// - Returns: 完成进度 0 ~ 1
-func navigationInteractivePopCompletePercent(forTranslation: CGPoint,
-startPoint: CGPoint) -> CGFloat
+func navigationInteractivePopCompletePercent(currentProgress: CGFloat, translation: CGPoint, startPoint: CGPoint) -> CGFloat
 
 ```
 - 交互转场过程

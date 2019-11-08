@@ -65,7 +65,8 @@ protocol NavigationTransitioningProtocol {
     ///   - translation: 位移
     ///   - startPoint: 开始位置
     /// - Returns: 完成进度 0 ~ 1
-    func navigationInteractivePopCompletePercent(forTranslation: CGPoint,
+    func navigationInteractivePopCompletePercent(currentProgress: CGFloat,
+                                                 translation: CGPoint,
                                                  startPoint: CGPoint) -> CGFloat
 
     /// 开始
@@ -148,11 +149,13 @@ extension UIViewController: NavigationTransitioningProtocol {
         return should
     }
 
-    @objc open func navigationInteractivePopCompletePercent(forTranslation: CGPoint, startPoint: CGPoint) -> CGFloat {
+    @objc open func navigationInteractivePopCompletePercent(currentProgress: CGFloat,
+                                                            translation: CGPoint,
+                                                            startPoint: CGPoint) -> CGFloat {
         if let childViewController = self.childViewControllerForNavigationControllerTransitioning() {
-            return childViewController.navigationInteractivePopCompletePercent(forTranslation:forTranslation, startPoint:startPoint)
+            return childViewController.navigationInteractivePopCompletePercent(currentProgress: currentProgress, translation: translation, startPoint:startPoint)
         } else {
-            return forTranslation.x / self.view.bounds.width
+            return translation.x / self.view.bounds.width
         }
     }
 
