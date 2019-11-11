@@ -88,17 +88,21 @@ extension FirstViewController {
     }
 
     // Simultaneously if return True
-    override func interactiveGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer, for transitionType: ModalTransitioningType) -> Bool {
-        return super.interactiveGestureRecognizer(gestureRecognizer, shouldRecognizeSimultaneouslyWith: otherGestureRecognizer, for: transitionType)
+    override func interactiveGestureRecognizer(shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return super.interactiveGestureRecognizer(shouldRecognizeSimultaneouslyWith: otherGestureRecognizer)
+    }
+    
+    override func interactiveTransitionShouldInterrupt(for transitionType: ModalTransitioningType, currentProcess: CGFloat) -> Bool {
+        return currentProcess > 0.4
     }
 
     // Fractional process for interactive transition
     override func interactiveTransitionCompletePercent(for transitionType: ModalTransitioningType,
-                                                       currentProgress: CGFloat,
+                                                       currentProcess: CGFloat,
                                                        location: CGPoint,
                                                        translation: CGPoint) -> CGFloat {
         return super.interactiveTransitionCompletePercent(for: transitionType,
-                                                          currentProgress: currentProgress,
+                                                          currentProcess: currentProcess,
                                                           location: location,
                                                           translation: translation)
         /*

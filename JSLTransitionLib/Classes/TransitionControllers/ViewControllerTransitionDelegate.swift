@@ -5,6 +5,7 @@
 import UIKit
 
 /// presentation/dismiss 转场代理
+@objc(JSLViewControllerTransitionDelegate)
 public final class ViewControllerTransitionDelegate: NSObject {
 
     private var interactiveTransition: UIPercentDrivenInteractiveTransition?
@@ -37,6 +38,7 @@ public final class ViewControllerTransitionDelegate: NSObject {
         self.presentedViewController?.view.removeGestureRecognizer(interactiveGr)
     }
 
+    @objc
     public init(presentedViewController: UIViewController) {
         self.presentedViewController = presentedViewController
         super.init()
@@ -44,6 +46,7 @@ public final class ViewControllerTransitionDelegate: NSObject {
         presentedViewController.modalPresentationStyle = .custom
 
         let interactiveGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handleInteractiveGesture(_:)))
+        interactiveGestureRecognizer.maximumNumberOfTouches = 1
         interactiveGestureRecognizer.delegate = self
         interactiveGestureRecognizer.isEnabled = false
         self.interactiveGestureRecognizer = interactiveGestureRecognizer
@@ -87,86 +90,135 @@ public final class ViewControllerTransitionDelegate: NSObject {
             return
         }
 
-        let state = interactiveGr.state
+        switch interactiveGr.state {
+        case .began:
+            handleInteractiveGestureStateBegin(with: presentedVC)
+        case .changed:
+            handleInteractiveGestureStateChanged(interactiveGr, with: presentedVC)
+            // 重置平移速度
+            interactiveGr.setTranslation(CGPoint.zero, in: interactivePresentingViewController?.view)
+        default:
+            handleInteractiveGestureStateEnd(interactiveGr, with: presentedVC, ignoreGrState: false)
+        }
+    }
+    
+    /// 处理转场手势开始状态，初始化相关参数
+    /// - Parameter presentedVC: 转场视图控制器
+    private func handleInteractiveGestureStateBegin(with presentedVC: UIViewController) {
 
-        if state == .began {
-
-            interactiveTransition = UIPercentDrivenInteractiveTransition()
-            interactiveTransition?.completionCurve = .linear
-            interactiveTransitionPercentComplete = 0
-            
-            switch currentInteractiveTransitionType {
-            case .dismiss:
-                interactivePresentingViewController = presentedVC.presentingViewController
-                isInteractiveDismissing = true
-                interactivePresentingViewController?.dismiss(animated: true, completion: nil)
-            case .presentTo:
-                guard let presentToVC = presentedVC.viewControllerForInteractivePresentTo() else {
-                    resetInteractiveTransition()
-                    isTransitioning = false
-                    return
-                }
-                interactivePresentingViewController = presentedVC
-                presentToVC.transitioningDelegate = self
-                presentToVC.modalPresentationStyle = .custom
-                presentToViewController = presentToVC
-                isInteractivePresentTo = true
-                let dismissGr = UIPanGestureRecognizer(target: self, action: #selector(handlerPresentToVCInteraction(_:)))
-                dismissGr.delegate = self
-                // 添加转场过程中返回手势
-                presentToVC.view.addGestureRecognizer(dismissGr)
-                presentToDismissInterativeGestureRecognizer = dismissGr
-                presentedVC.present(presentToVC, animated: true, completion: nil)
-            default:
+        // 初始化 InteractiveTransition
+        interactiveTransition = UIPercentDrivenInteractiveTransition()
+        interactiveTransition?.completionCurve = .linear
+        interactiveTransitionPercentComplete = 0
+        
+        switch currentInteractiveTransitionType {
+        case .dismiss:
+            // 交互 Dismiss 时，给 presentingView 赋值
+            interactivePresentingViewController = presentedVC.presentingViewController
+            isInteractiveDismissing = true
+            interactivePresentingViewController?.dismiss(animated: true, completion: nil)
+        case .presentTo:
+            // 允许交互推出新页面，同时提供了被推出页面视图控制器
+            guard let presentToVC = presentedVC.viewControllerForInteractivePresentTo() else {
                 resetInteractiveTransition()
                 isTransitioning = false
                 return
             }
+            // 把当前页面（presenterdVC）赋值给 presentingView
+            interactivePresentingViewController = presentedVC
+            // 将设置被推出页面转场代理
+            presentToVC.transitioningDelegate = self
+            presentToVC.modalPresentationStyle = .custom
+            presentToViewController = presentToVC
+            isInteractivePresentTo = true
+            
+            // 添加转场过程中取消转场手势（为了在交互推出页面的转场过程中，下滑取消）
+            let dismissGr = UIPanGestureRecognizer(target: self, action: #selector(handlerPresentToVCInteraction(_:)))
+            dismissGr.delegate = self
+            presentToVC.view.addGestureRecognizer(dismissGr)
+            presentToDismissInterativeGestureRecognizer = dismissGr
+            // 开始转场
+            presentedVC.present(presentToVC, animated: true, completion: nil)
+        default:
+            // 非交互转场类型，重置
+            resetInteractiveTransition()
+            isTransitioning = false
+            return
+        }
 
-            presentedVC.startInteractive(for: currentInteractiveTransitionType)
-        } else {
+        presentedVC.startInteractive(for: currentInteractiveTransitionType)
+    }
+    
+    /// 转场手势移动状态处理
+    /// - Parameter interactiveGr: 交互转场手势
+    /// - Parameter presentedVC: 转场视图控制器
+    private func handleInteractiveGestureStateChanged(_ interactiveGr: UIPanGestureRecognizer, with presentedVC: UIViewController) {
 
-            guard let interactiveTransition = interactiveTransition else {
-                return
-            }
+        // 手势变化时，确认 interactiveTransition 是否已经赋值
+        guard let interactiveTransition = interactiveTransition else {
+            return
+        }
+        let locationPoint = interactiveGr.location(in: interactivePresentingViewController?.view)
+        let translation = interactiveGr.translation(in: interactivePresentingViewController?.view)
 
-            let locationPoint = interactiveGr.location(in: interactivePresentingViewController?.view)
-            let translation = interactiveGr.translation(in: interactivePresentingViewController?.view)
-
-            // 完成比例
-            var fraction = presentedVC
-                .interactiveTransitionCompletePercent(for: currentInteractiveTransitionType,
-                                                      currentProgress: interactiveTransitionPercentComplete,
-                                                      location: locationPoint,
-                                                      translation: translation)
-            fraction += interactiveTransitionPercentComplete
-            if state == .changed {
-                interactiveTransitionPercentComplete = max(0, fraction)
-                interactiveTransition.update(min(1, interactiveTransitionPercentComplete))
-            } else {
-                // 滑动速度
-                let velocity = interactiveGr.velocity(in: interactivePresentingViewController?.view)
-                fraction += presentedVC
-                    .interactiveTransitionCompletePercent(for: currentInteractiveTransitionType,
-                                                          currentProgress: interactiveTransitionPercentComplete,
-                                                          location: locationPoint,
-                                                          translation: velocity)
-                interactiveTransitionPercentComplete = max(0, fraction)
-                if (state == .ended && interactiveTransitionPercentComplete >= 0.4) || interactiveTransitionPercentComplete == 1 { // 完成
-                    interactiveTransition.finish()
-                    presentedVC.finishInteractive(for: currentInteractiveTransitionType)
-                } else { // 取消
-                    interactiveTransition.cancel()
-                    presentedVC.cancelInteractive(for: currentInteractiveTransitionType)
-                }
-
-                resetInteractiveTransition()
-            }
-
-            interactiveGr.setTranslation(CGPoint.zero, in: interactivePresentingViewController?.view)
+        // 完成比例
+        var fraction = presentedVC.interactiveTransitionCompletePercent(for: currentInteractiveTransitionType,
+                                                                        currentProcess: interactiveTransitionPercentComplete,
+                                                                        location: locationPoint,
+                                                                        translation: translation)
+        fraction += interactiveTransitionPercentComplete
+        interactiveTransitionPercentComplete = max(0, fraction)
+        interactiveTransition.update(min(1, interactiveTransitionPercentComplete))
+        
+        // 是否需要中断交互转场
+        let shouldInterrupt = presentedVC.interactiveTransitionShouldInterrupt(for: currentInteractiveTransitionType, currentProcess: interactiveTransitionPercentComplete)
+        if shouldInterrupt {
+            // 如果中断交互转场，则根据当前
+            handleInteractiveGestureStateEnd(interactiveGr,
+                                             with: presentedVC,
+                                             ignoreGrState: true)
         }
     }
+    
+    /// 结束交互手势处理
+    /// - Parameter interactiveGr: 交互手势
+    /// - Parameter presentedVC: 转场 VC
+    /// - Parameter ignoreGrState: 是否需要忽略转场手势状态
+    private func handleInteractiveGestureStateEnd(_ interactiveGr: UIPanGestureRecognizer,
+                                                  with presentedVC: UIViewController,
+                                                  ignoreGrState: Bool) {
+        
+        // 手势结束或者取消时，确认 interactiveTransition 是否已经赋值
+        guard let interactiveTransition = interactiveTransition else {
+            return
+        }
+        
+        let locationPoint = interactiveGr.location(in: interactivePresentingViewController?.view)
+        let velocity = interactiveGr.velocity(in: interactivePresentingViewController?.view)
+        
+        // 手势结束，根据速度计算交互转场进度
+        interactiveTransitionPercentComplete += presentedVC
+            .interactiveTransitionCompletePercent(for: currentInteractiveTransitionType,
+                                                  currentProcess: interactiveTransitionPercentComplete,
+                                                  location: locationPoint,
+                                                  translation: velocity)
+        interactiveTransitionPercentComplete = min(interactiveTransitionPercentComplete, 1)
+        interactiveTransitionPercentComplete = max(0, interactiveTransitionPercentComplete)
+        
+        if ((ignoreGrState || interactiveGr.state == .ended)
+            && interactiveTransitionPercentComplete >= 0.4)
+            || interactiveTransitionPercentComplete == 1 { // 完成
+            interactiveTransition.finish()
+            presentedVC.finishInteractive(for: currentInteractiveTransitionType)
+        } else { // 取消
+            interactiveTransition.cancel()
+            presentedVC.cancelInteractive(for: currentInteractiveTransitionType)
+        }
 
+        resetInteractiveTransition()
+    }
+    
+    /// 重置交互转场参数
     private func resetInteractiveTransition() {
         currentInteractiveTransitionType = .none
         if !isInteractivePresentTo {
@@ -187,6 +239,7 @@ extension ViewControllerTransitionDelegate: UIGestureRecognizerDelegate {
 
         if gestureRecognizer == presentToDismissInterativeGestureRecognizer {
             if let presentTo = presentToViewController, let translation = presentToDismissInterativeGestureRecognizer?.translation(in: presentTo.view), translation.y > 0 {
+                // 如果在交互推出新页面的过程中，下滑页面，则取消当前交互推出转场
                 interactiveTransition?.cancel()
             }
             return false
@@ -233,7 +286,7 @@ extension ViewControllerTransitionDelegate: UIGestureRecognizerDelegate {
         }
 
         if let presentedVC = presentedViewController {
-            return !presentedVC.interactiveGestureRecognizer(gestureRecognizer, shouldRecognizeSimultaneouslyWith: otherGestureRecognizer, for: currentInteractiveTransitionType)
+            return !presentedVC.interactiveGestureRecognizer(shouldRecognizeSimultaneouslyWith: otherGestureRecognizer)
         }
 
         return (otherGestureRecognizer as? UIPanGestureRecognizer != nil ||
@@ -273,7 +326,7 @@ extension ViewControllerTransitionDelegate: UIViewControllerTransitioningDelegat
                              presenting: UIViewController,
                              source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         // 获取转场动画
-        let transitioning = presented.viewControllerAnimatedTransitioning(for: ModalTransitioningType.presented) ?? PresentAnimatedTransitioning(type: .present)
+        let transitioning = presented.viewControllerAnimatedTransitioning(for: .presented) ?? PresentAnimatedTransitioning(type: .present)
         transitioning.delegate = self
         isTransitioning = true
 
@@ -282,7 +335,7 @@ extension ViewControllerTransitionDelegate: UIViewControllerTransitioningDelegat
 
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         // 获取转场动画
-        let transitioning = dismissed.viewControllerAnimatedTransitioning(for: ModalTransitioningType.dismiss) ?? PresentAnimatedTransitioning(type: .dismiss)
+        let transitioning = dismissed.viewControllerAnimatedTransitioning(for: .dismiss) ?? PresentAnimatedTransitioning(type: .dismiss)
         transitioning.delegate = self
         isTransitioning = true
 
