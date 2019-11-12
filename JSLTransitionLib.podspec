@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JSLTransitionLib'
-  s.version          = '2.0.1'
+  s.version          = '3.0.0'
   s.summary          = 'Help you to hold custom view transitions EASYLY !'
   s.swift_version = '4.2'
   s.platform = 'ios'
@@ -32,12 +32,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'JSLTransitionLib/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'JSLTransitionLib' => ['JSLTransitionLib/Assets/*.png']
-  # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
