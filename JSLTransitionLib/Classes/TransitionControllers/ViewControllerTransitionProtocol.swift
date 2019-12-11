@@ -8,9 +8,10 @@ import UIKit
 ///
 /// - dismiss: 模态消失
 /// - presented: 被模态推出
-/// - presentTo: 模态推出其他视图
+/// - presentTo: 交互模态推出其他视图
 /// - none: 无转场
-@objc public enum ModalTransitioningType: Int {
+@objc(JSLModalTransitioningType)
+public enum ModalTransitioningType: Int {
     case dismiss, presented, presentTo, none
 
     /// 是否支持手势交互
@@ -132,7 +133,7 @@ extension UIViewController: ViewControllerTransitionProtocol {
         get {
             let dismissEnable = childViewControllerForViewControllerTransitioning()?.isInteractiveDismissEnable
             guard let value = objc_getAssociatedObject(self, &AssociatedKeys.isInteractiveDismissEnable) as? Bool else {
-                return dismissEnable ?? true
+                return dismissEnable ?? isFistViewController()
             }
             return dismissEnable ?? value
         }
@@ -255,6 +256,21 @@ extension UIViewController: ViewControllerTransitionProtocol {
         return nil
     }
     
+    /// 当前页面是否为视图控制器
+    private func isFistViewController() -> Bool {
+        if let navigationController = self as? UINavigationController {
+            return navigationController.children.count == 1
+        }
+
+        if let tabBarController = self as? UITabBarController {
+            return tabBarController.children.count == 1
+        }
+        if let navigation = navigationController {
+            return navigation.children.count == 1
+        }
+        return true
+    }
+
 }
 
 //----------------------------------------------------------

@@ -167,6 +167,9 @@ func interactivePopGestureShouldBegin(translation: CGPoint) -> Bool
 /// - Returns: 完成进度 0 ~ 1
 func navigationInteractivePopCompletePercent(currentProgress: CGFloat, translation: CGPoint, startPoint: CGPoint) -> CGFloat
 
+/// 根据 currentProcess 等判断交互转场是否需要中断，默认为 false。即交互手势尚未结束时，是否强制中断交互控制
+func interactiveTransitionShouldInterrupt(for transitionType: ModalTransitioningType, currentProcess: CGFloat) -> Bool
+                                          
 ```
 - 交互转场过程
 
