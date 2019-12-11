@@ -98,7 +98,7 @@ public final class ViewControllerTransitionDelegate: NSObject {
             // 重置平移速度
             interactiveGr.setTranslation(CGPoint.zero, in: interactivePresentingViewController?.view)
         default:
-            handleInteractiveGestureStateEnd(interactiveGr, with: presentedVC, ignoreGrState: false)
+            handleInteractiveGestureStateEnd(interactiveGr, with: presentedVC)
         }
     }
     
@@ -173,10 +173,9 @@ public final class ViewControllerTransitionDelegate: NSObject {
         // 是否需要中断交互转场
         let shouldInterrupt = presentedVC.interactiveTransitionShouldInterrupt(for: currentInteractiveTransitionType, currentProcess: interactiveTransitionPercentComplete)
         if shouldInterrupt {
-            // 如果中断交互转场，则根据当前
-            handleInteractiveGestureStateEnd(interactiveGr,
-                                             with: presentedVC,
-                                             ignoreGrState: true)
+            // 中断手势
+            interactiveGr.isEnabled = false
+            interactiveGr.isEnabled = true
         }
     }
     
@@ -185,8 +184,7 @@ public final class ViewControllerTransitionDelegate: NSObject {
     /// - Parameter presentedVC: 转场 VC
     /// - Parameter ignoreGrState: 是否需要忽略转场手势状态
     private func handleInteractiveGestureStateEnd(_ interactiveGr: UIPanGestureRecognizer,
-                                                  with presentedVC: UIViewController,
-                                                  ignoreGrState: Bool) {
+                                                  with presentedVC: UIViewController) {
         
         // 手势结束或者取消时，确认 interactiveTransition 是否已经赋值
         guard let interactiveTransition = interactiveTransition else {
@@ -205,7 +203,7 @@ public final class ViewControllerTransitionDelegate: NSObject {
         interactiveTransitionPercentComplete = min(interactiveTransitionPercentComplete, 1)
         interactiveTransitionPercentComplete = max(0, interactiveTransitionPercentComplete)
         
-        if ((ignoreGrState || interactiveGr.state == .ended)
+        if ((!interactiveGr.isEnabled || interactiveGr.state == .ended)
             && interactiveTransitionPercentComplete >= 0.4)
             || interactiveTransitionPercentComplete == 1 { // 完成
             interactiveTransition.finish()
@@ -350,8 +348,11 @@ extension ViewControllerTransitionDelegate: UIViewControllerTransitioningDelegat
         return interactiveTransition
     }
 
-    public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return presented.presentationController(for: presented, presenting: presenting, source: source) ?? UIPresentationController(presentedViewController: presented, presenting: presenting)
+    public func presentationController(forPresented presented: UIViewController,
+                                       presenting: UIViewController?,
+                                       source: UIViewController) -> UIPresentationController? {
+        return presented.presentationController(for: presented, presenting: presenting, source: source)
+            ?? UIPresentationController(presentedViewController: presented, presenting: presenting)
     }
 }
 
