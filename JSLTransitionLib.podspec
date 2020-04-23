@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JSLTransitionLib'
-  s.version          = '3.0.2'
+  s.version          = '3.0.3'
   s.summary          = 'Help you to hold custom view transitions EASYLY !'
   s.swift_version = '4.2'
   s.platform = 'ios'

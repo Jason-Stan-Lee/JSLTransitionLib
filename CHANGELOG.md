@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 `JSLTransitionLib` adheres to [Semantic Versioning](http://semver.org/).
 
 ---
+## [3.0.3](https://github.com/Jason-Stan-Lee/JSLTransitionLib/releases/tag/3.0.3) / 2020-04-23
+* Fix lifecycle wich used SemiPresentationController  
+
 ## [3.0.2](https://github.com/Jason-Stan-Lee/JSLTransitionLib/releases/tag/3.0.2) / 2019-12-12
 * UpgradeSemiPresentationController
 
