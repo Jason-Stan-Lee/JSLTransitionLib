@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 `JSLTransitionLib` adheres to [Semantic Versioning](http://semver.org/).
 
 ---
+## [3.0.3](https://github.com/Jason-Stan-Lee/JSLTransitionLib/releases/tag/3.0.3) / 2020-04-23
+* Fix lifecycle wich used SemiPresentationController  
+
+## [3.0.2](https://github.com/Jason-Stan-Lee/JSLTransitionLib/releases/tag/3.0.2) / 2019-12-12
+* UpgradeSemiPresentationController
+
+
 ## [3.0.1](https://github.com/Jason-Stan-Lee/JSLTransitionLib/releases/tag/3.0.1) / 2019-12-11
 * Fix some bugs for `interactiveTransitionShouldInterrupt` in complex transitionings
 * Only the rootViewController of NavigationController will enable interactive dismiss as a default 

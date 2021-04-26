@@ -144,5 +144,9 @@ extension SemiPresentationController {
         presentationWrappingView?.frame = containerViewFrame
     }
 
+    public override var shouldRemovePresentersView: Bool {
+        return true
+    }
+
 }
 
